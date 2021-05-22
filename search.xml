@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo搭建记录</title>
+    <url>/2021/05/22/Hexo%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>Hexo博客搭建过程记录</p>
+<span id="more"></span>
+
+<h1 id="1-前置安装"><a href="#1-前置安装" class="headerlink" title="1 前置安装"></a>1 前置安装</h1><ul>
+<li>准备工作，安装如下工具（windows）：<ul>
+<li>Git：<a href="https://git-scm.com/downloads">官网上下载安装</a></li>
+<li>Node.js：<a href="https://nodejs.org/en/">下载安装LTS版</a>即可，安装过程需要勾选添加到路径中 </li>
+</ul>
+</li>
+</ul>
+<h1 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h1><p><a href="https://blog.csdn.net/u011130655/article/details/113019296">https://blog.csdn.net/u011130655/article/details/113019296</a><br><a href="https://www.beiwangshan.com/archives/188.html">https://www.beiwangshan.com/archives/188.html</a><br><a href="https://blog.csdn.net/sugela8/article/details/116205887">https://blog.csdn.net/sugela8/article/details/116205887</a></p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Picgo搭建记录</title>
     <url>/2021/05/21/Picgo%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>Picgo与Github相结合，作为图片的云床进行使用，为写博客时候的图片插入提供了便利</p>
@@ -67,6 +91,7 @@
         <category>Picgo</category>
       </categories>
       <tags>
+        <tag>Github</tag>
         <tag>Picgo</tag>
         <tag>Typora</tag>
       </tags>

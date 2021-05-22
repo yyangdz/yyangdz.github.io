@@ -24,19 +24,21 @@
 
 
 
-  <meta name="description" content="This is a website sharing something i met or i learned">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TAGS">
-<meta property="og:url" content="https://yyangdz.top/tags/index.html">
+  <meta name="description" content="Hexo博客搭建过程记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建记录">
+<meta property="og:url" content="https://yyangdz.top/2021/05/22/Hexo%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Yyangdz&#39;s Blog">
-<meta property="og:description" content="This is a website sharing something i met or i learned">
+<meta property="og:description" content="Hexo博客搭建过程记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-21T12:47:41.000Z">
-<meta property="article:modified_time" content="2021-05-22T02:26:58.875Z">
+<meta property="article:published_time" content="2021-05-22T07:00:34.000Z">
+<meta property="article:modified_time" content="2021-05-22T08:13:42.271Z">
 <meta property="article:author" content="yyangdz">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Github">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yyangdz.top/tags/">
+<link rel="canonical" href="https://yyangdz.top/2021/05/22/Hexo%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/">
 
 
 <script id="page-configurations">
@@ -44,13 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>TAGS | Yyangdz's Blog
-</title>
+  <title>Hexo搭建记录 | Yyangdz's Blog</title>
   
 
 
@@ -193,51 +194,139 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">TAGS
-</h1>
-
-<div class="post-meta">
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yyangdz.top/2021/05/22/Hexo%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+      <meta itemprop="name" content="yyangdz">
+      <meta itemprop="description" content="This is a website sharing something i met or i learned">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yyangdz's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo搭建记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-22 15:00:34 / 修改时间：16:13:42" itemprop="dateCreated datePublished" datetime="2021-05-22T15:00:34+08:00">2021-05-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">博客搭建</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>244</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Hexo博客搭建过程记录</p>
+<span id="more"></span>
+
+<h1 id="1-前置安装"><a href="#1-前置安装" class="headerlink" title="1 前置安装"></a>1 前置安装</h1><ul>
+<li>准备工作，安装如下工具（windows）：<ul>
+<li>Git：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">官网上下载安装</a></li>
+<li>Node.js：<a target="_blank" rel="noopener" href="https://nodejs.org/en/">下载安装LTS版</a>即可，安装过程需要勾选添加到路径中 </li>
+</ul>
+</li>
+</ul>
+<h1 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011130655/article/details/113019296">https://blog.csdn.net/u011130655/article/details/113019296</a><br><a target="_blank" rel="noopener" href="https://www.beiwangshan.com/archives/188.html">https://www.beiwangshan.com/archives/188.html</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/sugela8/article/details/116205887">https://blog.csdn.net/sugela8/article/details/116205887</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>yyangdz
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://yyangdz.top/2021/05/22/Hexo%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="Hexo搭建记录">https://yyangdz.top/2021/05/22/Hexo搭建记录/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
-</header>
 
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              目前共计 4 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Github/" style="font-size: 16px; color: #111">Github</a> <a href="/tags/Hexo/" style="font-size: 16px; color: #111">Hexo</a> <a href="/tags/Picgo/" style="font-size: 16px; color: #111">Picgo</a> <a href="/tags/Typora/" style="font-size: 16px; color: #111">Typora</a>
-            </div>
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/Github/" rel="tag"><i class="fa fa-tag"></i> Github</a>
           </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
 
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/21/Picgo%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" rel="prev" title="Picgo搭建记录">
+      <i class="fa fa-chevron-left"></i> Picgo搭建记录
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
     
-    
-    
+  </article>
+  
+  
+  
+
 
 
           </div>
@@ -288,6 +377,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%89%8D%E7%BD%AE%E5%AE%89%E8%A3%85"><span class="nav-text">1 前置安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%8F%82%E8%80%83"><span class="nav-text">相关参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
