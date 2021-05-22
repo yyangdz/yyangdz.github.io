@@ -1229,7 +1229,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b562c9;
+  background: #1bff8c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1597,25 +1597,6 @@ pre .javascript .function {
   .pagination {
     margin-top: 40px;
   }
-}
-.back-to-top {
-  font-size: 12px;
-  text-align: center;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-}
-.back-to-top {
-  background: transparent;
-  margin: 8px -10px -20px;
-  opacity: 0;
-}
-.back-to-top.back-to-top-on {
-  cursor: pointer;
-  opacity: 0.6;
-}
-.back-to-top.back-to-top-on:hover {
-  opacity: 0.8;
 }
 .reading-progress-bar {
   background: #A020F0;
