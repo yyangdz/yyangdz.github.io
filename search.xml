@@ -7,13 +7,182 @@
 <span id="more"></span>
 
 <h1 id="1-前置安装"><a href="#1-前置安装" class="headerlink" title="1 前置安装"></a>1 前置安装</h1><ul>
-<li>准备工作，安装如下工具（windows）：<ul>
+<li><p>准备工作，安装如下工具（windows）：</p>
+<ul>
 <li>Git：<a href="https://git-scm.com/downloads">官网上下载安装</a></li>
 <li>Node.js：<a href="https://nodejs.org/en/">下载安装LTS版</a>即可，安装过程需要勾选添加到路径中 </li>
 </ul>
 </li>
+<li><p>测试是否安装成功：</p>
+<ul>
+<li><p>在cmd中输入如下指令，若有相关版本信息出现，则正确安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></li>
+<li><p>注：如果npm在使用过程中比较慢，可以换成淘宝源cnpm</p>
+</li>
 </ul>
-<h1 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h1><p><a href="https://blog.csdn.net/u011130655/article/details/113019296">https://blog.csdn.net/u011130655/article/details/113019296</a><br><a href="https://www.beiwangshan.com/archives/188.html">https://www.beiwangshan.com/archives/188.html</a><br><a href="https://blog.csdn.net/sugela8/article/details/116205887">https://blog.csdn.net/sugela8/article/details/116205887</a></p>
+</li>
+</ul>
+<h1 id="2-托管到Github中前置设置"><a href="#2-托管到Github中前置设置" class="headerlink" title="2 托管到Github中前置设置"></a>2 托管到Github中前置设置</h1><ul>
+<li><p>创建GitHub账号，Username如： <code>example_XXX</code> ，所用邮箱为：<code>example_XXX@yourmail.com</code> </p>
+</li>
+<li><p>在GitHub账户中创建Repository，具体如所示，红色框是必选项，需 注意：</p>
+<ul>
+<li><p>Repository的名字必须与Username一致，且后缀为.github.io</p>
+</li>
+<li><p>Repository需选择Public</p>
+</li>
+<li><p>Repository的default分支为main，hexo上传的默认分支为master，此处选择默认的main，随后在hexo配置中修改</p>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/(%603@7800SP%7DRQ@AE%5BX68SO9.hc" style="zoom: 50%;" /></li>
+</ul>
+</li>
+<li><p>生成SSH：</p>
+<ul>
+<li><p>打开git bash（随便找个文件夹），输入如下指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;example_XXX&quot; </span><br><span class="line">git config --global user.email &quot;example_XXX@mymail.com&quot; </span><br></pre></td></tr></table></figure></li>
+<li><p>验证一下是否配置正确：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config user.name </span><br><span class="line">git config user.email </span><br></pre></td></tr></table></figure></li>
+<li><p>再输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;example_XXX@mymail.com&quot; </span><br></pre></td></tr></table></figure>
+
+<p>一路回车即可生成相关ssh文件，其会指出文件路径，一般生成在用户路径下生成.ssh文件夹</p>
+</li>
+<li><p>找到公钥 id_rsa.pub 用编辑器打开并复制（Visual Studio Code，or whatever）</p>
+</li>
+</ul>
+</li>
+<li><p>设置GitHub的SSH：</p>
+<ul>
+<li><p>找到account setting中的SSH设置，new一个</p>
+</li>
+<li><p>将刚才复制的公钥粘贴到Key中要存即可，Tile随意</p>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/I~6`P%1I6H@9K3Z}8}B{`@N.hc" style="zoom:50%;" /></li>
+<li><p>在git bash中验证是否通信成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com </span><br></pre></td></tr></table></figure>
+
+<p>出现：<code> You&#39;re successfully authenticated，...</code> 便通信成功</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-部署Hexo到GitHub"><a href="#3-部署Hexo到GitHub" class="headerlink" title="3 部署Hexo到GitHub"></a>3 部署Hexo到GitHub</h1><ul>
+<li><p>安装：</p>
+<ul>
+<li><p>打开git bash输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
+
+<p>再处输入 <code>hexo -v</code> 检查下是否完成安装</p>
+</li>
+<li><p>创建个文件夹，然后在该文件夹右键打开git bash，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install </span><br></pre></td></tr></table></figure>
+
+<p>如果创建的不如意，删了重新创建就行 </p>
+</li>
+<li><p>相关指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean 	// 清除之前生成的东西</span><br><span class="line">hexo g 		// 生成静态文章</span><br><span class="line">hexo s 		// 开启本地静态html服务器，可以后跟端口号，默认就行</span><br><span class="line">hexo d 		// 部署文章</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>部署到GitHub：</p>
+<ul>
+<li>打开hexo文件下的 <code>_config.yml</code> 文件，对deploy进行修改，其中branch修改为main，与之前对应：</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/S%7D$V%5DX4XGQNYBCN5DC1Z1%5D5.hc" style="zoom:50%;" />
+
+<ul>
+<li><p>然后安装deploy-git，打开git bash输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save </span><br></pre></td></tr></table></figure></li>
+<li><p>最后输入 <code>hexo d</code> ，然后过一会就可以在 <code>example_XXX.github.io</code> 该网址看到你的博客</p>
+</li>
+<li><p><strong>注：</strong><code>hexo d</code>时总是出现 <code>Spawn failed</code> 错误，可以试试将hexo的 _config.yml 文件进行如下修改：</p>
+</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/8989P%60FJV%7DM%7DPMQ%7DJ2UY0R5.hc" style="zoom:50%;" /></li>
+</ul>
+<h1 id="4-设置个人域名（可选）"><a href="#4-设置个人域名（可选）" class="headerlink" title="4 设置个人域名（可选）"></a>4 设置个人域名（可选）</h1><ul>
+<li><p>购买域名：</p>
+<ul>
+<li>在腾讯云、阿里云或其他进行购买，可能会需要实名认证并进行备案，此处以腾讯云为例进行介绍</li>
+<li>先进行<a href="https://dnspod.cloud.tencent.com/">域名充值注册</a>，完成备案后即可</li>
+</ul>
+</li>
+<li><p>域名解析设置：</p>
+<ul>
+<li><p>打开刚才购买的域名，进行域名DNS解析设置，进行如下添加设置：</p>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/XBUKQ`87B2R{5OC_ZH(}I%U.hc" style="zoom:50%;" />
+
+<p>其中后两个是指向GitHub的地址，可能会更新，具体参考<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">官方文档</a>。</p>
+</li>
+</ul>
+</li>
+<li><p>GitHub设置：</p>
+<ul>
+<li><p>打开刚才创建的Repository，找到setting</p>
+</li>
+<li><p>找到pages，填入个人域名地址，并勾选https选项（https需要过一段时间起效）</p>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/4965$UN7EG(47S@2Y)QUK)4.jpg" style="zoom:50%;" /></li>
+</ul>
+</li>
+<li><p>本地hexo设置：</p>
+<ul>
+<li><p>在hexo文件夹下的source中新增 CNAME 文件，无后缀</p>
+</li>
+<li><p>在 CNAME 中写入你的域名保存即可</p>
+</li>
+<li><p>最后hexo文件夹下以此输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d </span><br></pre></td></tr></table></figure>
+
+<p>过一会就可以从个人的域名打开你的博客</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-初写文章"><a href="#5-初写文章" class="headerlink" title="5 初写文章"></a>5 初写文章</h1><ul>
+<li><p>新建文章：</p>
+<ul>
+<li><p>打开在hexo博客路径下打开git bash，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new (post) &quot;Hello world&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>打开hexo博客下路径：<code>\source\_posts\Hello-world.md</code></p>
+<p>该<code>.md</code>文件就是刚才创建的，如下所示：</p>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210524092951.png" style="zoom:50%;" /></li>
+</ul>
+</li>
+<li><p>tags索引：</p>
+<ul>
+<li><p>打开在hexo博客路径下打开git bash，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page &quot;TAGS&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>打开hexo博客下路径：<code>\source\tags\index.md</code>，将其设置为：</p>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210524093533.png" style="zoom:50%;" /></li>
+<li><p>再在文章中增加tags标签：</p>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210524093733.png" style="zoom:50%;" /></li>
+<li><p>在git bash中素质三联之后，打开对应的网址，就能看见文章了，同时tags索引也生效了</p>
+</li>
+</ul>
+</li>
+<li><p>categories索引：</p>
+<ul>
+<li><p>与tags相同，不同在于categories分多级目录，在文章中增加：</p>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210524100108.png" style="zoom:50%;" />
+
+<p>其中对应的目录索引如下：</p>
+<ul>
+<li><p>测试</p>
+<ul>
+<li>编程</li>
+</ul>
+</li>
+<li><p>python</p>
+<ul>
+<li>编程</li>
+</ul>
+</li>
+<li><p>helloword</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h1><p><a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程_Fangzh的技术博客-CSDN博客_hexo</a></p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -32,10 +201,10 @@
 
 <h1 id="1-云仓库搭建（GitHub）"><a href="#1-云仓库搭建（GitHub）" class="headerlink" title="1 云仓库搭建（GitHub）"></a>1 云仓库搭建（GitHub）</h1><ul>
 <li>注册GitHub，并新建一个Repository（名字随便，此处举例为 <code>example</code> ），细节如下图所示，红色部分是必须的，记住你的分支名字（main）：<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210521194509.png" style="zoom: 80%;" /></li>
-<li>找到account setting中的Developer settings，生成token，如下：<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210521190735.png" style="zoom:80%;" /></li>
+<li>找到account setting中的Developer settings，生成token，如下：<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210521190735.png" style="zoom: 67%;" /></li>
 <li>然后勾选repo之后生成即可，如下：<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210521190932.png"/>
 
-之后生成一个access token码，只出现一次，找个地方记下来，没了也不要仅，删了重新生成就行<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210521191332.png"/></li>
+之后生成一个access token码，只出现一次，找个地方记下来，没了也不要仅，删了重新生成就行<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210521191332.png" style="zoom:80%;" /></li>
 <li>注意：<br>要想不同的设备公用一个仓的话，最好生成多个token，分别应用于不同的设备</li>
 </ul>
 <h1 id="2-Picgo安装"><a href="#2-Picgo安装" class="headerlink" title="2 Picgo安装"></a>2 Picgo安装</h1><ul>
