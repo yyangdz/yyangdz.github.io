@@ -55,7 +55,7 @@
 <li><p>找到account setting中的SSH设置，new一个</p>
 </li>
 <li><p>将刚才复制的公钥粘贴到Key中要存即可，Tile随意</p>
-<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/I~6`P%1I6H@9K3Z}8}B{`@N.hc" style="zoom:50%;" /></li>
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210524104207.png" style="zoom:50%;" /></li>
 <li><p>在git bash中验证是否通信成功：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com </span><br></pre></td></tr></table></figure>
 
@@ -107,7 +107,7 @@
 <li><p>域名解析设置：</p>
 <ul>
 <li><p>打开刚才购买的域名，进行域名DNS解析设置，进行如下添加设置：</p>
-<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/XBUKQ`87B2R{5OC_ZH(}I%U.hc" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/lyangdz/test@main/data/20210524104335.png" style="zoom:50%;" />
 
 <p>其中后两个是指向GitHub的地址，可能会更新，具体参考<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">官方文档</a>。</p>
 </li>
